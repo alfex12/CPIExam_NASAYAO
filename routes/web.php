@@ -20,8 +20,7 @@ Route::get('/', function () {
 
 Route::get('/posts', [PostsController::class, 'index']);
 //Route::post('/posts /{id}', [PostsController::class, 'store']);
-//Route::post('/posts', [PostsController::class, 'store']);
-Route::post('/posts', 'PostsController@index');
+Route::post('/posts', [PostsController::class, 'store']);
 Route::put('/posts', [PostsController::class, 'update']);
 Route::delete('/posts', [PostsController::class, 'destroy']);
 
