@@ -31,8 +31,10 @@ class PostsController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        return Posts::save(['post_title' => $request->input('post_title'),
-        'post_details' => $request->input('post_details')]);
+        // return Posts::save(['post_title' => $request->input('post_title'),
+        // 'post_details' => $request->input('post_details')]);
+        return Posts::create(['post_title' => $POST['post_title'],
+        'post_details' => $POST['post_details']]);
     }
 
     /**
