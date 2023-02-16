@@ -15,7 +15,7 @@ use App\Http\Controllers\CommentsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['posts', $posts]);
 });
 
 Route::get('/posts', [PostsController::class, 'index']);

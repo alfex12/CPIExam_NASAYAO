@@ -12,6 +12,13 @@
 
     </head>
     <body class="antialiased">
+        <div>
+            @foreach($posts as $post){ 
+                {{$post->post_title}} 
+                {{$post->post_details}}
+            }
+            @endforeach
+        </div>
                 <div class="mt-16">
                      <form method="post" action="/posts">
                         <label>Post Title</label>
@@ -20,7 +27,7 @@
                         <input type="text" name="post_details">
                         <button type="submit" name="submit">Submit</button>
                     </form>
-                </div>
+                </div>  
     </body>
 
     

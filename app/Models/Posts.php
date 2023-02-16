@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Comments;
 
 class Posts extends Model
 {
@@ -15,7 +16,7 @@ class Posts extends Model
     ];
 
 
-    public function Comments(){
-        return $this->hasMany('comments');
+    public function comments(){
+        return $this->hasMany(Comments::class, 'post_id');
     }
 }

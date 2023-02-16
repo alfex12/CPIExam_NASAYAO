@@ -7,15 +7,19 @@ use App\Http\Requests\UpdatePostsRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
+        // $posts = Posts::all();
+        // return View::make('welcome')->with('posts', $posts);
         return Posts::all();
+        //return Posts::all();
     }
 
     /**
