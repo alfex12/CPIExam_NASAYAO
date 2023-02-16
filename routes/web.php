@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CommentsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/posts', [PostsController::class, 'index']);
+Route::post('/posts', [PostsController::class, 'store']);
+Route::put('/posts', [PostsController::class, 'update']);
+Route::delete('/posts', [PostsController::class, 'destroy']);
+
+Route::get('/comments', [CommentsController::class, 'index']);
+Route::post('/comments', [CommentsController::class, 'store']);
+Route::put('/comments', [CommentsController::class, 'update']);
+Route::delete('/comments', [CommentsController::class, 'destroy']);
